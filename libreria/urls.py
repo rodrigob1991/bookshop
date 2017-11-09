@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^libro/(?P<numero_libro>[0-9]+)/', views.prestar_libro,name="prestar_libro"),
     url(r'^libros_prestados/',views.libros_prestados,name="libros_prestados"),
-    url(r'^libros_disponibles/',views.libros_disponibles,name="libros_disponibles"),
+    url(r'^$',views.libros_disponibles,name="libros_disponibles"),
     
     
     	

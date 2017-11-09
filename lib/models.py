@@ -8,7 +8,7 @@ class Libro(models.Model):
 	isbn=models.CharField(max_length=13)
 	prestamo=models.DateTimeField(blank=True,null=True)
 	devolucion=models.DateField(blank=True,null=True)
-	cliente=models.ForeignKey("Cliente",null=True,blank=True)
+	cliente=models.ForeignKey("Cliente",null=True,blank=True,default=None)
 	
 
 	def tiempo_prestamo(self):

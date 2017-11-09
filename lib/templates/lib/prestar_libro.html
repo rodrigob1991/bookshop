@@ -21,7 +21,11 @@
             <button type="submit" class="prestar">Aceptar</button>
             </form>
             </div>
-            
+            <h4>Lista de clientes</h4>
+            {%for cliente in clientes%}
+            <p><ul><li>{{cliente.nombre}} {{cliente.apellido}}({{cliente.cedula}})</li></ul></p>
+            {%endfor%}
+
         </div>
 
     </div>

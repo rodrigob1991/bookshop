@@ -16,7 +16,7 @@
             <div class="col-md-8">
 
             {% for libro in libros %}
-            <h3>{{libro}}</h3>
+            <h3><ol><li>{{libro.cliente.nombre}} {{libro.cliente.apellido}}({{libro.cliente.cedula}});{{libro}}</li></ol></h3>
             {% endfor %}
             </div>
         </div>

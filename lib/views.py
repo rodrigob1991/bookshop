@@ -21,14 +21,13 @@ def prestar_libro(request,numero_libro):
 		libro.save()
 		return HttpResponseRedirect ('/libros_disponibles')
 	else:
-
+		clientes=Cliente.objects.all()
 		cliente_form=ClienteForm()
-		return render(request,'lib/prestar_libro.html',{'cliente_form':cliente_form})
+		return render(request,'lib/prestar_libro.html',{'cliente_form':cliente_form,'clientes':clientes})
 
 def libros_prestados(request):
 
-	libros=Libro.objects.filter(cliente__isnull=False).order_by("devolucion")
-	libros=("{}-{};{}({});devolucion: {}.".format(indice+1,libro,libro.cliente,libro.cliente.cedula,libro.devolucion) for indice,libro in enumerate(libros))	
+	libros=Libro.objects.filter(cliente__isnull=False).order_by("devolucion")	
 	return render(request,'lib/libros_prestados.html', {'libros': libros})
 
 def libros_disponibles(request):
